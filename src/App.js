@@ -2,16 +2,16 @@ import { useState } from "react";
 import "./App1.css";
 import Navbar from "./components/Navbar.js";
 import Textforms from './components/Textforms.js';
-import About from "./components/About.js";
-// import Alert from "./components/Alert";
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
+// import About from "./components/About.js";
+import Alert from "./components/Alert";
+// import React from "react";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
  
-} from "react-router-dom";
+// } from "react-router-dom";
 
 function App() {
   const [mode,setMode]=useState('light');//Dark mode is enabled or not
@@ -80,22 +80,22 @@ else{
   
    return (
     <>
- <Router>
+ {/* <Router> */}
       {/* <Navbar title="TEXTtutles" about="about us" /> */}
       <Navbar style1="purple theme"  title1="TEXTtutles" mode={mode} toggleMode={toggleMode} themeChange={themeChange} themeChange1={themeChange1}  />
-      {/* <Alert alert={alert}/> */}
+      <Alert alert={alert}/>
      
       <div className="container my-3">
-      <Switch>
+       {/*<Switch>
           <Route exact path="/about">
               <About /> 
           </Route>
-          <Route exact path="/">
-          <Textforms showAlert={showAlert}  heading="Enter your text to analyze" />
-          </Route> 
-        </Switch>
-      </div>
-      </Router>
+          <Route exact path="/">*/}
+        <Textforms showAlert={showAlert}  heading="Enter your text to analyze" />
+         {/*  </Route> 
+        </Switch>*/}
+      </div> 
+      {/* </Router> */}
     </>
   );
 }   
